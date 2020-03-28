@@ -1,0 +1,2 @@
+django<3.0
+autowrapt>=1.0
