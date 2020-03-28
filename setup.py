@@ -15,7 +15,7 @@ setup(
     zip_safe=False,
     keyword=['django', 'auth', 'backend'],
     project_urls={
-          'GitHub: repo': 'https://github.com/Chiorufarewerin/custom-django-auth-backend',
+          'GitHub': 'https://github.com/Chiorufarewerin/custom-django-auth-backend',
     },
     install_requires=[
         'autowrapt>=1.0',

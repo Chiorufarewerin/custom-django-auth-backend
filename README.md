@@ -1,4 +1,4 @@
-# custom_django_auth_backend
+# custom-django-auth-backend
 
 ## What is it?
   Easy add some auth backends in django project
