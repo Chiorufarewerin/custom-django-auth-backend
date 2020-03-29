@@ -20,5 +20,6 @@ setup(
     install_requires=[
         'autowrapt>=1.0',
         'django<3.0',
+        'lazy-object-proxy==1.4.*',
     ],
 )

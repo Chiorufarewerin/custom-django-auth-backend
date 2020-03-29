@@ -1,6 +1,5 @@
-import logging
-
 from .settings import LOGGER_NAME
+from .utils import get_logger
 
 
-logger = logging.getLogger(LOGGER_NAME)
+logger = get_logger(LOGGER_NAME)
