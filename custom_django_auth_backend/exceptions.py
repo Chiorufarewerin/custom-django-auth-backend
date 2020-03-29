@@ -3,7 +3,7 @@ class AuthException(Exception):
 
     def __init__(self, *args, **kwargs):
         if not args:
-            args.append(self.base_name)
+            args = (self.base_name, )
         else:
             self.base_name = str(args[0])
         super().__init__(*args, **kwargs)

@@ -2,7 +2,7 @@ from typing import Optional, Type
 
 from .dto import UserDTO
 from .exceptions import UnavailbleException, AuthException
-from .settings import LOGGER_NAME, DEFAULT_USERNAME_PREFIX
+from .settings import DEFAULT_USERNAME_PREFIX
 from .logging import logger
 
 
@@ -17,9 +17,13 @@ class BasicAuthBackend:
     def get_user_model(self) -> Type:
         try:
             from django.contrib.auth.models import User
+            return User
         except Exception:
             logger.exception('Не удалось импортировать модель User')
             raise
+
+    def get_user(self, user_id: int) -> Optional['User']:
+        return self.get_user_model().objects.filter(pk=user_id).first() or None
 
     def get_prefixed_username(self, username: str) -> str:
         return f'{self.USERNAME_PREFIX}{username}'
@@ -34,7 +38,7 @@ class BasicAuthBackend:
 
     def get_and_update_user(self, username: str, password: str, user_dto: UserDTO) -> 'User':
         user, _ = self.get_user_model().objects.update_or_create(username=self.get_prefixed_username(username),
-                                                defaults=user_dto.params)
+                                                                 defaults=user_dto.params)
         if not user.check_password(password):
             user.set_password(password)
             user.save()
