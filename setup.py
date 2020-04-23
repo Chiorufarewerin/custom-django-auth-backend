@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='custom-django-auth-backend',
-    version='0.1.1',
+    version='0.1.2',
     license='MIT',
     url='https://github.com/Chiorufarewerin/custom-django-auth-backend',
     author='Artur Beltsov',
