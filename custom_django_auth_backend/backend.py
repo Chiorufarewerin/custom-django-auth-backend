@@ -69,9 +69,9 @@ class BasicAuthBackend:
             user_dto = self.get_user_by_login(username, password)
         except UnavailbleException:
             return self.get_user_by_login_exists(username, password)
-        except WrongUserPasswordException as e:
+        except WrongUserPasswordException:
             self.delete_password_user_if_exists(username)
-            raise ValidationError(e.readable_error)
+            return None
         except BlockedUserException as e:
             self.delete_password_user_if_exists(username)
             self.set_inactive_user_if_exists(username)
