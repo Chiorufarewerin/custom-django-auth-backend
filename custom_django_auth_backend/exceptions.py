@@ -17,5 +17,9 @@ class WrongUserPasswordException(AuthException):
     base_name = 'Неверный логин или пароль'
 
 
+class BlockedUserException(AuthException):
+    base_name = 'Пользователь заблокирован'
+
+
 class UnavailbleException(AuthException):
     base_name = 'Не удалось подключиться, сервис недоступен или имеет неккоректный ответ'

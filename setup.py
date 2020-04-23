@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='custom-django-auth-backend',
-    version='0.1.0',
+    version='0.1.1',
     license='MIT',
     url='https://github.com/Chiorufarewerin/custom-django-auth-backend',
     author='Artur Beltsov',
@@ -15,7 +15,7 @@ setup(
     zip_safe=False,
     keyword=['django', 'auth', 'backend'],
     project_urls={
-          'GitHub': 'https://github.com/Chiorufarewerin/custom-django-auth-backend',
+        'GitHub': 'https://github.com/Chiorufarewerin/custom-django-auth-backend',
     },
     install_requires=[
         'autowrapt>=1.0',
